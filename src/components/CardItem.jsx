@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 
 
 
-function CardItem ({id, image, title}) {
+function CardItem ({ image, title}) {
 
     return(
       <>
@@ -11,9 +12,9 @@ function CardItem ({id, image, title}) {
             <div className="p-6 space-y-4">
                 <h2 className="text-xl font-bold dark:text-gray-200">{title}</h2>
                 <p className="font-normal text-gray-500 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, impedit voluptatem ut accusantium natus eveniet. Facere accusantium minus, odio commodi itaque incidunt dicta! Officiis corrupti nesciunt sapiente! Exercitationem, corrupti fuga.</p>
-                <a className="inline-flex rounded-md items-center bg-blue-600 px-3 py-1 text-white " href="#">
+                <Link to='/readmore'  className="inline-flex rounded-md items-center bg-blue-600 px-3 py-1 text-white ">
                  Read more
-                </a>
+                </Link>
             </div>
         </div>
        </div>
