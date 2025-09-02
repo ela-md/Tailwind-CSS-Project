@@ -2,7 +2,13 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-
+@theme{
+    --color-bermuda :#78dcca;
+  --color-gray-50: oklch(0.984 0.003 247.858);
+  --color-gray-100: oklch(0.968 0.007 247.896);
+  --color-gray-200: oklch(0.929 0.013 255.508);
+  --color-gray-300: oklch(0.869 0.022 252.894);
+}
 
 html,
 body,

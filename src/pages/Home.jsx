@@ -7,24 +7,23 @@ function Home() {
   const [theme, SetTheme] = useState("light");
 
   const toggleTheme = () => {
-    if(theme =='light'){
-      SetTheme("dark")
-    }else{
-      SetTheme("light")
+    if (theme == "light") {
+      SetTheme("dark");
+    } else {
+      SetTheme("light");
     }
-     document.documentElement.classList.toggle("dark")
+    document.documentElement.classList.toggle("dark");
   };
-
 
   return (
     <>
-      <div className=" w-screen h-screen bg-white dark:bg-gray-900">
-        <div className="p-10">
+      <div className=" w-full min-h-screen  bg-white dark:bg-gray-900">
+        <div className="  sm: p-10">
           <div className="p-10 text-center">
             <button
               onClick={toggleTheme}
               className=" border rounded-full shadow-md shadow-purple-500 cursor-pointer
-               border-gray-300  dark:border-purple-900 text-gray-700 dark:text-gray-400 p-4 hover:text-purple-400 transition-all ease-in-out dark:shadow-purple-400 dark:hover:text-gray-500 "
+               border-gray-300 sm:p-4 dark:border-purple-900 text-gray-700 dark:text-gray-400 p-4 hover:text-purple-400 transition-all ease-in-out dark:shadow-purple-400 dark:hover:text-gray-500 "
             >
               {theme == "dark" ? (
                 <svg
@@ -34,6 +33,7 @@ function Home() {
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="size-8"
+                  className="w-6 h-6 sm:w-8 sm:h-8"
                 >
                   <path
                     stroke-linecap="round"
@@ -49,6 +49,7 @@ function Home() {
                   stroke-width="1.5"
                   stroke="currentColor"
                   class="size-8"
+                  className="w-6 h-6 sm:w-8 sm:h-8"
                 >
                   <path
                     stroke-linecap="round"
@@ -59,12 +60,12 @@ function Home() {
               )}
             </button>
           </div>
-          <div className="max-w-[1600px] mx-auto ">
-            <div className=" flex justify-center ">
-              {cards.map((card) => (
-                <CardItem key={card.id} {...card} />
-              ))}
-            </div>
+          <div className="max-w-[1400px] grid grid-cols-12 mx-auto ">
+            {cards.map((card) => (
+              <div key={card.id} className="col-span-12 md:col-span-6 lg:col-span-4 xl:col-span-3 p-2">
+                <CardItem {...card} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
